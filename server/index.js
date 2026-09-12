@@ -1,4 +1,4 @@
-﻿const express = require('express');
+const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const fs = require('fs');
@@ -104,10 +104,13 @@ app.post('/api/passport/verify', (req, res) => {
 
 // Serve frontend static build if available
 const clientDist = path.join(__dirname, '../client/dist');
-if (fs.existsSync(clientDist)) {
-  app.use(express.static(clientDist));
+const rootDist = path.join(__dirname, '../dist');
+const staticDist = fs.existsSync(clientDist) ? clientDist : (fs.existsSync(rootDist) ? rootDist : null);
+
+if (staticDist) {
+  app.use(express.static(staticDist));
   app.get('*', (req, res) => {
-    res.sendFile(path.join(clientDist, 'index.html'));
+    res.sendFile(path.join(staticDist, 'index.html'));
   });
 }
 
