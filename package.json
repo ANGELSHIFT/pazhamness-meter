@@ -1,0 +1,16 @@
+﻿{
+  "name": "pazhamness-meter",
+  "version": "2.0.0",
+  "description": "Pazhamness Meter — The world's most unnecessarily serious banana investigation system",
+  "scripts": {
+    "build": "npm --prefix server install && npm --prefix client install && npm --prefix client run build",
+    "build:all": "npm --prefix server install && npm --prefix client install && npm --prefix client run build",
+    "start": "node server/index.js",
+    "dev:server": "node server/index.js",
+    "dev:client": "npm --prefix client run dev"
+  },
+  "keywords": ["banana", "pazhamness", "kerala", "computer-vision", "manglish", "react"],
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

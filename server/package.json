@@ -1,0 +1,14 @@
+{
+  "name": "pazhamness-server",
+  "version": "1.0.0",
+  "description": "Backend API for Pazhamness Meter AI computer vision and court archive",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}
